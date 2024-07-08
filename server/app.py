@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '<h1>Welcome to my page!</h1>'
+   return redirect(url_for('user', username='Newton'))
 
 @app.route('/<string:username>')
 def user(username):
